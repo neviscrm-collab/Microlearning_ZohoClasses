@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MicroLearning — Bite-Sized AI-Powered Learning | Zoho Classes</title>
+<meta name="description" content="Transform traditional learning into engaging bite-sized lessons powered by AI, gamification, and curriculum-aligned content for Grades 1–12 with Zoho Classes MicroLearning."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{font-family:'Inter',sans-serif;box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+/* ── Nav ── */
+.zc-nav{background:#fff;border-bottom:1px solid #e5e7eb;height:64px;display:flex;align-items:center;position:sticky;top:0;z-index:100;}
+.nav-demo{border:1.5px solid #111827;color:#111827;border-radius:6px;padding:8px 20px;font-size:13px;font-weight:600;white-space:nowrap;transition:all .18s;}
+.nav-demo:hover{background:#111827;color:#fff;}
+
+/* ── Hero ── */
+.hero-bg{
+  position:relative;min-height:680px;
+  display:flex;align-items:flex-start;overflow:hidden;
+  background:#f0ebff;
+}
+.hero-bg::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 60%, rgba(109,40,217,.15) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 55% at 90% 40%, rgba(109,40,217,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 70% 90%, rgba(79,46,180,.22) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 65% at 88% 80%, rgba(60,30,150,.25) 0%, transparent 60%),
+    linear-gradient(175deg, #e8dfff 0%, #d5c8ff 28%, #b8a0ef 55%, #8c68d4 75%, #5c38a8 100%);
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse 65% 45% at 72% 38%, rgba(255,255,255,.20) 0%, transparent 60%);
+  mix-blend-mode:overlay;
+}
+
+/* ── Buttons ── */
+.btn-red{display:inline-flex;align-items:center;gap:8px;background:#e42527;color:#fff;border-radius:5px;padding:13px 26px;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;transition:background .18s,transform .1s;}
+.btn-red:hover{background:#c81e20;transform:translateY(-1px);}
+
+/* ── Hero tags ── */
+.hero-tag{background:#1a1a1a;color:#fff;border-radius:50px;padding:10px 22px;font-size:14px;font-weight:500;white-space:nowrap;}
+
+/* ── Sections ── */
+.sec-white{background:#fff;}
+.sec-dark{background:#1c1c1c;color:#fff;}
+.sec-purple{background:#2e1065;color:#fff;}
+.sec-light{background:#f5f4f2;}
+
+/* ── Frames ── */
+.browser-frame{border-radius:12px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.18);border:1px solid #d1d5db;}
+.browser-bar{background:#2d2d2d;padding:10px 16px;display:flex;align-items:center;gap:8px;}
+.b-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.browser-addr{background:#3d3d3d;border-radius:4px;flex:1;padding:4px 12px;font-size:11px;color:#9ca3af;font-family:monospace;}
+.laptop-frame{background:#1a1a1a;border-radius:16px;padding:12px 12px 0;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.laptop-screen{background:#fff;border-radius:8px 8px 0 0;overflow:hidden;}
+.laptop-base{background:#2a2a2a;height:16px;border-radius:0 0 8px 8px;}
+
+/* Phone mockup */
+.phone-outer{background:#1a0840;border-radius:36px;border:3px solid #2d1265;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);}
+.phone-inner{background:#fff;border-radius:28px;overflow:hidden;}
+
+/* ── Feature card ── */
+.feat-card{background:#f5f4f2;border-radius:20px;overflow:hidden;}
+
+/* ── Scroll reveal ── */
+.sr{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s;}
+.sr.in{opacity:1;transform:none;}
+
+/* ── Sticky ── */
+.sticky-btn{position:fixed;bottom:24px;right:24px;z-index:999;background:#e42527;color:#fff;border-radius:5px;padding:12px 22px;font-size:13px;font-weight:700;box-shadow:0 4px 20px rgba(228,37,39,.35);transition:background .18s;}
+.sticky-btn:hover{background:#c81e20;}
+
+/* ── XP bar ── */
+.xp-bar{height:6px;border-radius:3px;background:#e5e7eb;}
+.xp-fill{height:6px;border-radius:3px;background:linear-gradient(90deg,#6d28d9,#c026d3);}
+
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+.float{animation:float 4s ease-in-out infinite;}
+@keyframes spin-arc{from{stroke-dashoffset:100;}to{stroke-dashoffset:0;}}
+.spin{animation:spin-arc 2s ease-in-out infinite alternate;}
+</style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="zc-nav px-8">
+  <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+    <a href="https://www.zoho.com/classes/" class="flex items-center gap-2.5">
+      <div style="background:#fff;border:2px solid #e5e7eb;border-radius:10px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;">
+        <svg width="26" height="22" viewBox="0 0 26 22" fill="none">
+          <rect x="1" y="1" width="24" height="16" rx="4" fill="#fff" stroke="#d1d5db" stroke-width="1.5"/>
+          <path d="M5 7h16M5 11h10" stroke="#374151" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="19" cy="17" r="4" fill="#6d28d9"/>
+          <path d="M17.5 17h3M19 15.5v3" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="text-[10px] text-gray-400 font-medium leading-none">Zoho</div>
+        <div class="text-[17px] font-bold text-gray-900 leading-tight">Classes</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#features" class="text-[14px] text-gray-600 font-medium hover:text-gray-900 flex items-center gap-1">Features <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+      <a href="#cta" class="text-[14px] text-gray-600 font-medium hover:text-gray-900">Pricing</a>
+      <a href="#cta" class="text-[14px] text-gray-600 font-medium hover:text-gray-900">Contact Sales</a>
+    </div>
+    <a href="#cta" class="nav-demo">REQUEST A DEMO</a>
+  </div>
+</nav>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero-bg">
+  <div class="relative z-10 max-w-7xl mx-auto px-8 pt-16 pb-0 w-full">
+    <!-- Feature icon + label -->
+    <div class="flex items-center gap-3 mb-6">
+      <div style="background:#6d28d9;border-radius:10px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="text-[18px] font-semibold text-gray-900">MicroLearning</span>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-[clamp(40px,5.2vw,70px)] font-black text-gray-900 leading-[1.05] tracking-tight mb-6 max-w-3xl">
+      Learning in Minutes.<br/>Results That Last.
+    </h1>
+
+    <!-- Sub-headline -->
+    <p class="text-[18px] text-gray-700 leading-relaxed mb-10 max-w-2xl">
+      Transform traditional learning into engaging bite-sized lessons powered by AI, personalised study plans, and curriculum-aligned content — for every student, every day.
+    </p>
+
+    <!-- CTA -->
+    <a href="#cta" class="btn-red mb-16 inline-flex">
+      GET STARTED NOW
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </a>
+
+    <!-- Feature tags -->
+    <div class="flex flex-wrap gap-3 pb-0">
+      <span class="hero-tag">AI Powered</span>
+      <span class="hero-tag">Personalised Plans</span>
+      <span class="hero-tag">Streaks & XP</span>
+      <span class="hero-tag">Grades 1–12</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FEATURE 1 — White card: Personalised Learning Plans ══════════ -->
+<section class="sec-white py-20 px-8" id="features">
+  <div class="max-w-7xl mx-auto">
+    <div class="feat-card sr">
+      <div class="grid lg:grid-cols-2 gap-0">
+
+        <!-- Text left -->
+        <div class="p-12 flex flex-col justify-center">
+          <h2 class="text-[clamp(30px,3.2vw,46px)] font-black text-gray-900 leading-tight mb-6">Personalised<br/>Learning Plans</h2>
+          <p class="text-[16px] text-gray-600 leading-relaxed mb-6">
+            Students create a personalised study plan in seconds — choose a subject, select chapters, set daily time, and the system builds a structured 7 to 30-day learning journey automatically.
+          </p>
+          <ul class="space-y-3 text-[15px] text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Subject and chapter-wise learning journeys</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Daily time options: 5, 10, 15, 20 or 30 minutes</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Plan durations: 7, 14, 21 or 30 days</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Multiple active plans — Maths + Science simultaneously</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Daily reminders to keep students on track</li>
+          </ul>
+        </div>
+
+        <!-- Phone screenshot right — Home screen from actual recording -->
+        <div class="p-10 flex items-center justify-center" style="background:linear-gradient(135deg,#f5f3ff,#ede9fe);">
+          <div class="phone-outer w-60 float">
+            <div class="phone-inner">
+              <div style="background:#6d28d9;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:13px;font-weight:800;color:#fff;">Micro Learning</span>
+                <div style="display:flex;gap:6px;">
+                  <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:12px;">+</div>
+                  <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:12px;">🔔</div>
+                </div>
+              </div>
+              <div style="background:#fff;padding:12px;">
+                <!-- Streak banner -->
+                <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:10px 12px;margin-bottom:10px;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                    <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:16px;">🔥</span><span style="font-size:12px;font-weight:800;color:#d97706;">1 Day Streak</span></div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:#d97706;"><span>🏆</span><span>Achievements</span></div>
+                  </div>
+                  <div style="font-size:9px;color:#9ca3af;margin-bottom:6px;">Best: 1 day</div>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <span style="background:#6d28d9;border-radius:5px;padding:2px 7px;font-size:9px;font-weight:800;color:#fff;">Lv2</span>
+                    <div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:44%;height:5px;background:linear-gradient(90deg,#6d28d9,#c026d3);border-radius:3px;"></div></div>
+                    <span style="font-size:9px;color:#6b7280;">44/100 XP</span>
+                  </div>
+                  <div style="font-size:9px;color:#9ca3af;margin-top:4px;">2 Sessions • 2 Active Plans</div>
+                </div>
+                <!-- Plans label -->
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                  <span style="font-size:11px;font-weight:700;color:#111;">Your Learning Plans</span>
+                  <span style="font-size:10px;color:#9ca3af;">2</span>
+                </div>
+                <!-- Filter tabs -->
+                <div style="display:flex;gap:5px;margin-bottom:8px;">
+                  <span style="background:#6d28d9;border-radius:50px;padding:3px 10px;font-size:9px;color:#fff;font-weight:600;">All</span>
+                  <span style="border:1px solid #e5e7eb;border-radius:50px;padding:3px 10px;font-size:9px;color:#6b7280;">Pending</span>
+                  <span style="border:1px solid #e5e7eb;border-radius:50px;padding:3px 10px;font-size:9px;color:#6b7280;">Missed</span>
+                  <span style="border:1px solid #e5e7eb;border-radius:50px;padding:3px 10px;font-size:9px;color:#6b7280;">Finished</span>
+                </div>
+                <!-- Plan card 1 -->
+                <div style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:14px;padding:10px;margin-bottom:6px;">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                    <div style="position:relative;width:36px;height:36px;flex-shrink:0;">
+                      <svg viewBox="0 0 36 36" width="36" height="36" style="transform:rotate(-90deg);"><circle cx="18" cy="18" r="14" fill="none" stroke="#ddd6fe" stroke-width="3"/><circle cx="18" cy="18" r="14" fill="none" stroke="#6d28d9" stroke-width="3" stroke-dasharray="12 76" stroke-linecap="round"/></svg>
+                      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#6d28d9;">1/7</div>
+                    </div>
+                    <div style="flex:1;">
+                      <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;font-weight:800;color:#111;">Data Structure</span><span style="background:#dcfce7;border-radius:50px;padding:1px 7px;font-size:8px;color:#166534;font-weight:700;">Today ✓</span></div>
+                      <div style="font-size:9px;color:#6b7280;margin-top:1px;">B.Tech IT · Strings</div>
+                    </div>
+                  </div>
+                  <div style="font-size:9px;color:#6d28d9;font-weight:600;">⚡ 3 ques/day</div>
+                </div>
+                <!-- Plan card 2 -->
+                <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;padding:10px;">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                    <div style="position:relative;width:36px;height:36px;flex-shrink:0;">
+                      <svg viewBox="0 0 36 36" width="36" height="36" style="transform:rotate(-90deg);"><circle cx="18" cy="18" r="14" fill="none" stroke="#bbf7d0" stroke-width="3"/><circle cx="18" cy="18" r="14" fill="none" stroke="#16a34a" stroke-width="3" stroke-dasharray="12 76" stroke-linecap="round"/></svg>
+                      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#16a34a;">1/7</div>
+                    </div>
+                    <div style="flex:1;">
+                      <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;font-weight:800;color:#111;">Maths</span><span style="background:#dcfce7;border-radius:50px;padding:1px 7px;font-size:8px;color:#166534;font-weight:700;">Today ✓</span></div>
+                      <div style="font-size:9px;color:#6b7280;margin-top:1px;">Class 5 · Large Numbers</div>
+                    </div>
+                  </div>
+                  <div style="font-size:9px;color:#16a34a;font-weight:600;">⚡ 3 ques/day</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FEATURE 2 — Dark: AI Question Generation ══════════ -->
+<section class="sec-dark py-20 px-8 sr">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+      <h2 class="text-[clamp(30px,3.2vw,46px)] font-black text-white leading-tight">AI Generates Your<br/>Questions Instantly</h2>
+      <p class="text-[16px] text-gray-400 leading-relaxed self-center">
+        Select your subject, chapter, and topic — AI generates a complete personalised quiz in seconds. Every session has fresh, curriculum-aligned questions automatically tailored to the student's level.
+      </p>
+    </div>
+    <div class="laptop-frame sr">
+      <div class="laptop-screen">
+        <div style="background:#fff;font-family:'Inter',sans-serif;">
+          <!-- Top bar -->
+          <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:8px 20px;display:flex;align-items:center;gap:20px;">
+            <span style="font-size:13px;font-weight:700;color:#111;">Zoho Classes</span>
+            <span style="font-size:12px;color:#6b7280;">Home</span>
+            <span style="font-size:12px;color:#6d28d9;border-bottom:2px solid #6d28d9;padding-bottom:2px;">Micro Learning</span>
+            <span style="font-size:12px;color:#6b7280;">Plans</span>
+          </div>
+          <div style="display:flex;height:380px;">
+            <!-- Left: chapter selection -->
+            <div style="width:240px;border-right:1px solid #e5e7eb;padding:14px;flex-shrink:0;">
+              <div style="font-size:10px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Select Chapters</div>
+              <div style="background:#f9fafb;border-radius:8px;padding:7px 10px;margin-bottom:8px;font-size:11px;color:#374151;">B.Tech IT · Data Structure</div>
+              <div style="font-size:10px;font-weight:700;color:#6b7280;margin-bottom:6px;">Step 2 of 3</div>
+              <div style="background:#f3f4f6;border-radius:7px;padding:7px 10px;margin-bottom:3px;font-size:11px;color:#6d28d9;font-weight:600;display:flex;justify-content:space-between;"><span>Fundamentals</span><span style="color:#9ca3af;">4 topics ›</span></div>
+              <div style="background:#f3f4f6;border-radius:7px;padding:7px 10px;margin-bottom:3px;font-size:11px;color:#6d28d9;font-weight:600;display:flex;justify-content:space-between;"><span>Arrays</span><span style="color:#9ca3af;">4 topics ›</span></div>
+              <div style="background:#ede9fe;border-radius:7px;padding:7px 10px;margin-bottom:3px;border:1px solid #c4b5fd;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-size:11px;color:#6d28d9;font-weight:700;">Strings</span><span style="font-size:10px;color:#9ca3af;">4 topics ∨</span></div>
+                <div style="background:#ddd6fe;border-radius:5px;padding:4px 8px;font-size:10px;color:#6d28d9;font-weight:700;margin-bottom:2px;display:flex;align-items:center;gap:5px;"><div style="width:12px;height:12px;border-radius:3px;background:#6d28d9;display:flex;align-items:center;justify-content:center;"><svg width="7" height="7" fill="none" viewBox="0 0 7 7"><path d="M1 3.5l1.5 1.5 3-3" stroke="#fff" stroke-width="1.2"/></svg></div>String manipulation</div>
+                <div style="font-size:10px;color:#9ca3af;padding:2px 4px;">Pattern matching (KMP)</div>
+                <div style="font-size:10px;color:#9ca3af;padding:2px 4px;">Palindromes</div>
+              </div>
+              <div style="background:#6d28d9;border-radius:8px;padding:9px;text-align:center;margin-top:10px;font-size:12px;font-weight:700;color:#fff;">Next →</div>
+            </div>
+            <!-- Right: AI generating screen -->
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fafafa;padding:30px;">
+              <!-- Subject tags from recording -->
+              <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:28px;">
+                <span style="background:#ede9fe;border-radius:50px;padding:4px 12px;font-size:11px;color:#6d28d9;font-weight:600;display:flex;align-items:center;gap:5px;"><div style="width:14px;height:14px;border-radius:4px;background:#6d28d9;display:flex;align-items:center;justify-content:center;"><svg width="8" height="8" fill="none" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" stroke="#fff" stroke-width="1.2"/></svg></div>Micro Learning</span>
+                <span style="background:#fef3c7;border-radius:50px;padding:4px 12px;font-size:11px;color:#92400e;font-weight:600;">B.Tech IT</span>
+                <span style="background:#ede9fe;border-radius:50px;padding:4px 12px;font-size:11px;color:#6d28d9;font-weight:600;">Data Structure</span>
+                <span style="background:#dcfce7;border-radius:50px;padding:4px 12px;font-size:11px;color:#166534;font-weight:600;">Day 1/7</span>
+              </div>
+              <!-- AI spinner (exact from recording) -->
+              <div style="position:relative;margin-bottom:18px;">
+                <svg width="72" height="72" viewBox="0 0 72 72">
+                  <circle cx="36" cy="36" r="30" fill="none" stroke="#e5e7eb" stroke-width="4"/>
+                  <circle cx="36" cy="36" r="30" fill="none" stroke="#6d28d9" stroke-width="4" stroke-dasharray="80 108" stroke-linecap="round" class="spin" style="transform:rotate(-90deg);transform-origin:50% 50%;"/>
+                </svg>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:26px;">✨</div>
+              </div>
+              <div style="font-size:20px;font-weight:900;color:#6d28d9;margin-bottom:6px;">Generating Questions</div>
+              <div style="font-size:14px;color:#6b7280;margin-bottom:20px;">AI is crafting your personalised quiz...</div>
+              <div style="background:#fff;border-radius:10px;padding:10px 16px;border:1px solid #e5e7eb;max-width:380px;text-align:center;">
+                <div style="font-size:11px;color:#9ca3af;line-height:1.6;">ⓘ Questions are AI-generated and may occasionally contain errors. Please verify answers if in doubt.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FEATURE 3 — White card: Live Quiz Experience ══════════ -->
+<section class="sec-white py-20 px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="feat-card sr">
+      <div class="grid lg:grid-cols-2 gap-0">
+
+        <!-- Browser screenshot left -->
+        <div class="p-8 flex items-center justify-center">
+          <div class="browser-frame w-full">
+            <div class="browser-bar">
+              <div class="b-dot bg-red-400"></div><div class="b-dot bg-amber-400"></div><div class="b-dot bg-green-400"></div>
+              <div class="browser-addr">web.zohoclassestest.com/microlearning/quiz</div>
+            </div>
+            <!-- MCQ screen — exact from recording -->
+            <div style="background:#fff;padding:14px;font-family:'Inter',sans-serif;">
+              <!-- Subject tag bar -->
+              <div style="background:#ede9fe;border-radius:10px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;flex-wrap:wrap;gap:6px;">
+                <div style="background:#6d28d9;border-radius:7px;width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" stroke="#fff" stroke-width="1.3"/></svg></div>
+                <span style="font-size:11px;font-weight:800;color:#6d28d9;">Micro Learning</span>
+                <span style="background:#ddd6fe;border-radius:50px;padding:2px 8px;font-size:10px;color:#6d28d9;font-weight:600;">B.Tech IT</span>
+                <span style="background:#ddd6fe;border-radius:50px;padding:2px 8px;font-size:10px;color:#6d28d9;font-weight:600;">Data Structure</span>
+                <span style="background:#dcfce7;border-radius:50px;padding:2px 8px;font-size:10px;color:#166534;font-weight:600;">Day 1/7</span>
+                <!-- Circular timer -->
+                <div style="margin-left:auto;position:relative;">
+                  <svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="15" fill="none" stroke="#e5e7eb" stroke-width="3"/><circle cx="19" cy="19" r="15" fill="none" stroke="#6d28d9" stroke-width="3" stroke-dasharray="65 29" stroke-linecap="round" style="transform:rotate(-90deg);transform-origin:50% 50%;"/></svg>
+                  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;color:#6d28d9;">2:00</div>
+                </div>
+              </div>
+              <!-- Score + progress -->
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span style="background:#f3f4f6;border-radius:7px;padding:4px 10px;font-size:11px;font-weight:800;color:#111;">4 / 10</span>
+                <span style="font-size:11px;color:#9ca3af;">Q5</span>
+              </div>
+              <div style="height:3px;background:#e5e7eb;border-radius:2px;margin-bottom:10px;"><div style="width:50%;height:3px;background:#6d28d9;border-radius:2px;"></div></div>
+              <!-- Question -->
+              <div style="background:#f9fafb;border-radius:10px;padding:10px;margin-bottom:8px;">
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="background:#6d28d9;border-radius:50px;padding:2px 10px;font-size:10px;color:#fff;font-weight:700;">Q5</span><span>💡</span></div>
+                <div style="font-size:13px;font-weight:700;color:#111;line-height:1.4;">What is the time complexity of linear search in the worst case?</div>
+              </div>
+              <!-- Options — from recording -->
+              <div style="display:flex;flex-direction:column;gap:7px;">
+                <div style="background:#f3f4f6;border-radius:9px;padding:8px 12px;display:flex;align-items:center;gap:8px;"><span style="background:#e5e7eb;border-radius:4px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#6b7280;flex-shrink:0;">A</span><span style="font-size:12px;color:#374151;">O(1)</span></div>
+                <div style="background:#ede9fe;border-radius:9px;padding:8px 12px;display:flex;align-items:center;gap:8px;border:1.5px solid #7c3aed;"><span style="background:#6d28d9;border-radius:4px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;">B</span><span style="font-size:12px;font-weight:700;color:#6d28d9;">O(n) ✓</span></div>
+                <div style="background:#f3f4f6;border-radius:9px;padding:8px 12px;display:flex;align-items:center;gap:8px;"><span style="background:#e5e7eb;border-radius:4px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#6b7280;flex-shrink:0;">C</span><span style="font-size:12px;color:#374151;">O(n²)</span></div>
+                <div style="background:#f3f4f6;border-radius:9px;padding:8px 12px;display:flex;align-items:center;gap:8px;"><span style="background:#e5e7eb;border-radius:4px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#6b7280;flex-shrink:0;">D</span><span style="font-size:12px;color:#374151;">O(log n)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text right -->
+        <div class="p-12 flex flex-col justify-center">
+          <h2 class="text-[clamp(30px,3.2vw,46px)] font-black text-gray-900 leading-tight mb-6">10 Questions.<br/>One Session.</h2>
+          <p class="text-[16px] text-gray-600 leading-relaxed mb-6">
+            Each session delivers exactly 10 AI-generated MCQ questions with a circular countdown timer. Every correct answer earns XP. Wrong answers show the correct answer immediately — so students always learn.
+          </p>
+          <ul class="space-y-3 text-[15px] text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>10 questions per session, 3–5 minutes total</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Circular countdown timer per question</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Immediate right/wrong feedback after each answer</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Hint system available for difficult questions</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Full answer review with explanations at the end</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FEATURE 4 — Dark: Perfect Score & Achievements ══════════ -->
+<section class="sec-dark py-20 px-8 sr">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 mb-16">
+      <h2 class="text-[clamp(30px,3.2vw,46px)] font-black text-white leading-tight">Every Session Ends<br/>with a Celebration</h2>
+      <p class="text-[16px] text-gray-400 leading-relaxed self-center">
+        Perfect scores unlock badges. XP points level students up. Achievement unlocks drive students to come back every day — making learning a daily habit, not a chore.
+      </p>
+    </div>
+    <div class="laptop-frame sr">
+      <div class="laptop-screen">
+        <div style="background:#fff;font-family:'Inter',sans-serif;">
+          <div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:8px 20px;display:flex;align-items:center;gap:20px;">
+            <span style="font-size:13px;font-weight:700;color:#111;">Zoho Classes</span>
+            <span style="font-size:12px;color:#6b7280;">Home</span>
+            <span style="font-size:12px;color:#6d28d9;border-bottom:2px solid #6d28d9;padding-bottom:2px;">Micro Learning</span>
+          </div>
+          <div style="display:flex;height:380px;">
+            <!-- Perfect score panel left (from recording) -->
+            <div style="flex:1;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-right:1px solid #e5e7eb;background:#fafafa;">
+              <div style="display:flex;gap:6px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;">
+                <span style="background:#ede9fe;border-radius:50px;padding:3px 10px;font-size:10px;color:#6d28d9;font-weight:600;">Micro Learning</span>
+                <span style="background:#ddd6fe;border-radius:50px;padding:3px 10px;font-size:10px;color:#6d28d9;font-weight:600;">Data Structure</span>
+                <span style="background:#dcfce7;border-radius:50px;padding:3px 10px;font-size:10px;color:#166534;font-weight:600;">Day 1/7</span>
+                <span style="background:#f3f4f6;border-radius:7px;padding:3px 10px;font-size:10px;font-weight:800;color:#374151;margin-left:auto;">10/10</span>
+              </div>
+              <!-- Star trophy -->
+              <div style="width:68px;height:68px;background:linear-gradient(135deg,#f59e0b,#ef4444);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-shadow:0 8px 24px rgba(245,158,11,.35);">
+                <span style="font-size:30px;">⭐</span>
+              </div>
+              <div style="background:#fef9c3;border-radius:50px;padding:5px 18px;display:inline-block;margin-bottom:8px;">
+                <span style="font-size:12px;font-weight:800;color:#92400e;">⭐ Perfect Score!</span>
+              </div>
+              <div style="font-size:14px;font-weight:700;color:#6d28d9;line-height:1.4;margin-bottom:14px;">Learning is a journey — you're making great progress! 🌟</div>
+              <div style="font-size:48px;font-weight:900;color:#6d28d9;line-height:1;">10<span style="font-size:22px;color:#9ca3af;font-weight:400;">/10</span></div>
+              <div style="font-size:12px;color:#9ca3af;margin-top:4px;">100% score · Completed in 3:52</div>
+              <div style="width:100%;height:5px;background:linear-gradient(90deg,#f59e0b,#ef4444);border-radius:3px;margin:12px 0;"></div>
+              <div style="display:flex;gap:8px;">
+                <div style="background:#6d28d9;border-radius:8px;padding:8px 18px;font-size:12px;font-weight:700;color:#fff;">✓ Done</div>
+                <div style="border:1px solid #e5e7eb;border-radius:8px;padding:8px 16px;font-size:12px;color:#374151;display:flex;align-items:center;gap:5px;">📋 Review <span style="background:#ede9fe;border-radius:50px;padding:1px 7px;font-size:10px;color:#6d28d9;font-weight:700;">10/10</span></div>
+              </div>
+            </div>
+            <!-- Achievements panel right (from recording) -->
+            <div style="flex:1;padding:24px;background:#fff;">
+              <div style="font-size:14px;font-weight:800;color:#111;margin-bottom:16px;">Rewards Earned</div>
+              <!-- Achievement unlocked - First Step Bronze (from recording) -->
+              <div style="background:#1a0840;border-radius:14px;padding:12px 14px;margin-bottom:10px;display:flex;align-items:center;gap:12px;">
+                <div style="background:linear-gradient(135deg,#92400e,#b45309);border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;">🏃</div>
+                <div>
+                  <div style="font-size:9px;color:#f59e0b;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;">Achievement Unlocked!</div>
+                  <div style="font-size:14px;font-weight:800;color:#fff;">First Step</div>
+                  <div style="background:#78350f;border-radius:50px;padding:2px 10px;display:inline-block;margin-top:4px;"><span style="font-size:10px;color:#fcd34d;font-weight:700;">Bronze 🥉</span></div>
+                </div>
+              </div>
+              <!-- Level up from recording -->
+              <div style="background:#f5f3ff;border-radius:14px;padding:12px 14px;margin-bottom:10px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                  <div style="display:flex;align-items:center;gap:7px;"><span style="background:#6d28d9;border-radius:5px;padding:2px 8px;font-size:10px;font-weight:800;color:#fff;">Lv2</span><span style="font-size:13px;font-weight:700;color:#111;">Learner</span></div>
+                  <span style="font-size:11px;color:#9ca3af;">32 / 150 XP</span>
+                </div>
+                <div class="xp-bar"><div class="xp-fill" style="width:21%"></div></div>
+                <div style="font-size:10px;color:#9ca3af;margin-top:4px;">Personal best! 🏆</div>
+              </div>
+              <!-- Badges -->
+              <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:8px;">Earned Badges</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <div style="background:#fef3c7;border-radius:8px;padding:4px 12px;font-size:11px;color:#92400e;font-weight:600;">🥇 Fast Learner</div>
+                <div style="background:#ede9fe;border-radius:8px;padding:4px 12px;font-size:11px;color:#6d28d9;font-weight:600;">⭐ Perfect Score</div>
+                <div style="background:#fef2f2;border-radius:8px;padding:4px 12px;font-size:11px;color:#991b1b;font-weight:600;">🔥 7-Day Streak</div>
+                <div style="background:#dcfce7;border-radius:8px;padding:4px 12px;font-size:11px;color:#166534;font-weight:600;">📚 Study Champ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FEATURE 5 — White card: Plan Progress Tracking ══════════ -->
+<section class="sec-white py-20 px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="feat-card sr">
+      <div class="grid lg:grid-cols-2 gap-0">
+
+        <!-- Text left -->
+        <div class="p-12 flex flex-col justify-center">
+          <h2 class="text-[clamp(30px,3.2vw,46px)] font-black text-gray-900 leading-tight mb-6">Track Progress.<br/>Identify Gaps.</h2>
+          <p class="text-[16px] text-gray-600 leading-relaxed mb-6">
+            Detailed plan analytics show students and teachers exactly where they stand — overall progress, daily history, topic accuracy, and AI-powered recommendations on what to study next.
+          </p>
+          <ul class="space-y-3 text-[15px] text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Overall progress % across plan days</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Avg score, best score, and session count</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Topic-level accuracy with targeted practice</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Daily history log with per-day scores</li>
+            <li class="flex items-start gap-2"><span class="text-gray-400 mt-0.5">•</span>Shareable progress reports for parents and teachers</li>
+          </ul>
+        </div>
+
+        <!-- Screenshot right — Plan progress from recording -->
+        <div class="p-8 flex items-center justify-center">
+          <div class="browser-frame w-full">
+            <div class="browser-bar">
+              <div class="b-dot bg-red-400"></div><div class="b-dot bg-amber-400"></div><div class="b-dot bg-green-400"></div>
+              <div class="browser-addr">web.zohoclassestest.com/microlearning/progress</div>
+            </div>
+            <div style="background:#fff;padding:14px;font-family:'Inter',sans-serif;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <div style="font-size:14px;font-weight:800;color:#111;">Data Structure</div>
+                <div style="color:#ef4444;font-size:14px;">🗑</div>
+              </div>
+              <!-- Plan header card -->
+              <div style="background:#f5f3ff;border-radius:10px;padding:10px;margin-bottom:10px;border:1px solid #ddd6fe;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+                  <div style="width:28px;height:28px;border-radius:8px;background:#6d28d9;display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="#fff" stroke-width="1.5"/></svg></div>
+                  <div><div style="font-size:12px;font-weight:800;color:#111;">Data Structure</div><div style="font-size:10px;color:#9ca3af;">B.Tech IT</div></div>
+                </div>
+                <div style="display:flex;gap:8px;font-size:10px;color:#6b7280;"><span>Arrays, Strings</span><span>•</span><span>10 min/day · 7 days total</span></div>
+              </div>
+              <!-- Progress -->
+              <div style="background:#fff;border-radius:10px;padding:10px;margin-bottom:8px;border:1px solid #e5e7eb;">
+                <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;"><span style="font-weight:700;color:#374151;">Overall Progress</span><span style="font-weight:800;color:#6d28d9;">14%</span></div>
+                <div style="height:7px;background:#f3f4f6;border-radius:4px;margin-bottom:5px;"><div style="width:14%;height:7px;background:#6d28d9;border-radius:4px;"></div></div>
+                <div style="font-size:10px;color:#9ca3af;">1 of 7 days completed</div>
+              </div>
+              <!-- Stats row -->
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+                <div style="background:#f9fafb;border-radius:8px;padding:8px;text-align:center;border:1px solid #e5e7eb;"><div style="font-size:16px;font-weight:900;color:#111;">33%</div><div style="font-size:9px;color:#9ca3af;">Avg</div></div>
+                <div style="background:#f9fafb;border-radius:8px;padding:8px;text-align:center;border:1px solid #e5e7eb;"><div style="font-size:16px;font-weight:900;color:#111;">33%</div><div style="font-size:9px;color:#9ca3af;">Best</div></div>
+                <div style="background:#f9fafb;border-radius:8px;padding:8px;text-align:center;border:1px solid #e5e7eb;"><div style="font-size:16px;font-weight:900;color:#111;">1</div><div style="font-size:9px;color:#9ca3af;">Sessions</div></div>
+              </div>
+              <!-- Topic accuracy -->
+              <div style="background:#fff;border-radius:8px;padding:8px;border:1px solid #e5e7eb;">
+                <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:6px;">Topic Accuracy</div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <span style="font-size:11px;color:#374151;">Strings</span>
+                  <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:10px;font-weight:700;color:#ef4444;">1/3</span><div style="width:50px;height:5px;background:#f3f4f6;border-radius:3px;"><div style="width:33%;height:5px;background:#ef4444;border-radius:3px;"></div></div><span style="background:#ede9fe;border-radius:50px;padding:2px 8px;font-size:9px;color:#6d28d9;font-weight:600;">▶ Practice</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FINAL CTA ══════════ -->
+<section class="sec-light py-24 px-8 text-center" id="cta">
+  <div class="max-w-3xl mx-auto sr">
+    <h2 class="text-[clamp(32px,4vw,52px)] font-black text-gray-900 leading-tight mb-5">
+      Build Better Learning Habits<br/>with Zoho Classes
+    </h2>
+    <p class="text-[17px] text-gray-500 leading-relaxed mb-10 max-w-2xl mx-auto">
+      Deliver engaging, AI-powered microlearning experiences that keep students learning every day. Start your free trial — no credit card required.
+    </p>
+    <a href="#" class="btn-red">GET STARTED NOW →</a>
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer style="background:#1c1c1c;border-top:1px solid #2d2d2d;" class="py-14 px-8 text-gray-500">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-5 gap-10 pb-10" style="border-bottom:1px solid #2d2d2d;">
+      <div class="md:col-span-2">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <div style="background:#1a0840;border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="18" viewBox="0 0 22 18" fill="none"><rect x="1" y="1" width="20" height="13" rx="3" stroke="#a78bfa" stroke-width="1.5"/><path d="M4 6h14M4 10h9" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div><span style="font-weight:800;color:#fff;font-size:16px;">Zoho</span><span style="color:#d1d5db;font-size:16px;"> Classes</span></div>
+        </div>
+        <p style="font-size:13px;line-height:1.7;margin-bottom:14px;">The complete AI-powered learning platform — MicroLearning, Games, Assessments, and Analytics for every institution.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span style="background:#2d2d2d;border-radius:4px;padding:3px 10px;font-size:10px;">AI Powered</span>
+          <span style="background:#2d2d2d;border-radius:4px;padding:3px 10px;font-size:10px;">Grades 1–12</span>
+          <span style="background:#2d2d2d;border-radius:4px;padding:3px 10px;font-size:10px;">CBSE / ICSE</span>
+        </div>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:14px;">Features</div>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:12px;">
+          <li><a href="#" class="hover:text-white transition-colors">Personalised Plans</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">AI Questions</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">XP & Achievements</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Progress Tracking</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Review Rounds</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:14px;">For Schools</div>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:12px;">
+          <li><a href="#" class="hover:text-white transition-colors">For Teachers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">For Students</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">For Parents</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Higher Education</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:14px;">Company</div>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:12px;">
+          <li><a href="#" class="hover:text-white transition-colors">About Zoho Classes</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact Sales</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;">
+      <span>© 2024 Zoho Corporation Pvt. Ltd. All rights reserved.</span>
+      <span style="background:#2d2d2d;border-radius:50px;padding:4px 14px;">Made with ❤️ for Students Who Love Learning</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#cta" class="sticky-btn">Get Started Now →</a>
+
+<script>
+const io = new IntersectionObserver(e => {
+  e.forEach(el => { if (el.isIntersecting) { el.target.classList.add('in'); io.unobserve(el.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.sr').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
